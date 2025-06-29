@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Gauri Borse</title>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+             font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #0f0f0f, #3f3e3e);
+            color: rgb(193, 218, 239);
+            overflow-x: hidden;
+            animation: fadeZoomIn 1.2s ease-out;
+        }
+
+         nav {
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            background: linear-gradient(to right, #1c1b1b, #3d3b3b);
+            color: #f0f0f0;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .left {
+            font-size: 2rem;
+            color: rgb(223, 225, 218);
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        .right ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: rgb(76, 185, 178);
+            font-size: 1.07rem;
+        }
+
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: auto;
+
+        }
+
+        .contact-left {
+            flex-basis: 35%;
+        }
+
+        .contact-right {
+            margin-top: 70px;
+            flex-basis: 60%;
+        }
+
+        .sub-title {
+            color: #b7144a;
+            margin-top: 20%;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            transition: transform 0.4s;
+        }
+
+        .sub-title:hover {
+            color: rgb(198, 93, 93);
+            transform: translateY(-5px);
+        }
+
+        .contact-left p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .contact-left p i {
+            color: #ff0055;
+            margin-right: 10px;
+        }
+
+        .social-icons {
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            font-size: 30px;
+            margin-right: 15px;
+            color: #ababab;
+            display: inline-block;
+            transition: transform 0.4s;
+        }
+
+        .social-icons a:hover {
+            color: #ff004f;
+            transform: translateY(-5px);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: #ff0055;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            margin-top: 35px;
+            transition: transform 0.4s;
+        }
+
+        .btn:hover {
+            background-color: #5a0808;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 12px;
+            background: #181717;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        form textarea {
+            resize: vertical;
+        }
+
+        form button {
+            background-color: #ff0055;
+            border: none;
+            margin-top: 10px;
+            padding: 12px 30px;
+            color: white;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.4s;
+        }
+
+        form button:hover {
+            background-color: #5a0b25;
+            transform: translateY(-5px);
+        }
+
+        
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .contact-left,
+            .contact-right {
+                flex: 1 1 100%;
+            }
+
+             .copyright {
+
+                text-align: center;
+                padding: 25px 0;
+                font-size: 12px;
+                margin-top: 80px;
+                position: bottom;
+            }
+
+             .menu-icon {
+                display: block;
+            }
+
+            .right {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #1c1b1b;
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 0;
+                z-index: 100;
+            }
+
+            .right ul {
+                flex-direction: column;
+            }
+
+            .right ul li {
+                margin: 15px 0;
+            }
+
+            .right.active {
+                display: flex;
+            }
+
+           
+        }
+
+        @keyframes fadeZoomIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.98) translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Zoom-in Animation */
+        .zoom-in {
+            opacity: 0;
+            transform: scale(0.95);
+            animation: zoomInFade 1s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+
+        .copyright {
+            width: 100%;
+            text-align: center;
+            padding: 25px 0;
+            background: linear-gradient(to right, #0f0f0f, #1f1e1e);
+            font-weight: 300;
+            margin-top: 80px;
+            position: bottom;
+        }
+
+        .copyright i {
+            color: red;
+        }
+
+        .copyright {
+            font-size: 14px;
+        }
+
+        #msg {
+            color: #61b752;
+            margin-top: 10px;
+            display: block;
+        }
+
+        
+        
+    </style>
+</head>
+
+<header>
+    <nav>
+        <div class="left">Gauri Borse</div>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="right" id="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<body>
+    <div class="container">
+        <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p><i class="fas fa-paper-plane"></i>borsegauri1509@gmail.com</p>
+            
+            <div class="social-icons">
+                <a href="https://github.com/gaurii15"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/gauri-borse/"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:borsegauri1509@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://instagram.com/_gauriborse_15"><i class="fab fa-instagram"></i></a>
+            </div>
+           
+        </div>
+
+        <div class="contact-right">
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required />
+                <input type="email" name="Email" placeholder="Your Email" required />
+                <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <span id="msg"></span>
+        </div>
+        <div class="copyright">
+            <p>Copyright @ Gauri Made with <i class="fas fa-heart"></i> by Gauri Borse</p>
+        </div>
+    </div>
+    <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxVzKDLBsT0-GIszg71VhC-C-Zug2_xYfJdcczMxWJRPHxAeeZVM88Z96C67gZm_mG6/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        
+        // Show immediate feedback
+        msg.style.color = "#ffae00";
+        msg.innerHTML = "Sending...";
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                msg.style.color = "#61b752";
+                msg.innerHTML = "Message sent successfully!";
+                setTimeout(function () {
+                    msg.innerHTML = ""
+                }, 4000)
+                form.reset()
+            })
+            .catch(error => {
+                msg.style.color = "#ff4d4d";
+                msg.innerHTML = "Error sending message. Please try again!";
+                console.error('Error!', error.message)
+            });
+    });
+
+     // Toggle nav menu
+        const menuIcon = document.getElementById("menu-icon");
+        const navLinks = document.getElementById("nav-links");
+        let menuOpen = false;
+
+        menuIcon.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+            menuOpen = !menuOpen;
+            this.innerHTML = menuOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+</script>
+
+</body>
+
+</html>

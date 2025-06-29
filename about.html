@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Gauri Borse</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #0f0f0f, #3f3e3e);
+            color: rgb(193, 218, 239);
+            overflow-x: hidden;
+            animation: fadeZoomIn 1.2s ease-out;
+        }
+
+        nav {
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            background: linear-gradient(to right, #1c1b1b, #3d3b3b);
+            color: #f0f0f0;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .left {
+            font-size: 2rem;
+            color: rgb(223, 225, 218);
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        .right ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: rgb(76, 185, 178);
+            font-size: 1.07rem;
+        }
+
+
+        #about {
+            padding: 80px 0;
+            color: rgb(186, 203, 210)
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .about-col-1 {
+            flex-basis: 35%;
+
+        }
+
+        .about-col-1 img {
+            margin-top: 30px;
+            width: 300px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #638a91;
+            position: center;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            margin-left: 100px;
+        }
+
+        .about-col-2 {
+            margin-top: -50px;
+            flex-basis: 60%;
+        }
+
+        .about-col-2 p {
+            margin-top: 10px;
+        }
+
+        .sub-title {
+            color: aqua;
+            margin-top: 40px;
+            font-size: 45px;
+            font-weight: 700;
+            transition: transform 0.4s;
+        }
+
+        .sub-title:hover {
+            color: #089a9a;
+            transform: translateY(-5px);
+        }
+
+        .tab-titles {
+            display: flex;
+            margin: 20px 0 40px;
+            color: rgb(235, 91, 87)
+        }
+
+        .tab-titles:hover {
+            color: rgb(169, 99, 91);
+            font-size: 2rem;
+
+        }
+
+
+        .tab-links {
+            margin-right: 50px;
+
+            font-size: 18px;
+            font-weight: 500px;
+            cursor: pointer;
+            position: relative;
+
+        }
+
+        .tab-links::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            background: red;
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            transition: 0.5s;
+
+        }
+
+        .tab-links.active-link::after {
+            width: 50%;
+        }
+
+        .tab-contents ul li {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        .tab-contents ul li span {
+
+            color: rgb(48, 194, 170);
+            font-size: 20px;
+
+            font-weight: 400;
+
+
+            /* Bold */
+
+        }
+
+
+        .tab-contents {
+            display: none;
+        }
+
+        .tab-contents.active-tab {
+            display: block;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 3px solid #00e5ff;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        /* Hover effect */
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.7), 0 0 40px rgba(0, 229, 255, 0.3);
+        }
+
+
+        @keyframes fadeZoomIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.98) translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Zoom-in Animation */
+        .zoom-in {
+            opacity: 0;
+            transform: scale(0.95);
+            animation: zoomInFade 1s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            .menu-icon {
+                display: block;
+            }
+
+            .right {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #1c1b1b;
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 0;
+                z-index: 100;
+            }
+
+            .right ul {
+                flex-direction: column;
+            }
+
+            .right ul li {
+                margin: 15px 0;
+            }
+
+            .right.active {
+                display: flex;
+            }
+
+            .sub-title {
+                font-size: 30px;
+                margin-left: 20px;
+            }
+
+            .about-col-1,
+            .about-col-2 {
+                flex-basis: 50%;
+                position: left;
+            }
+
+            .about-col-1 {
+                margin-bottom: 30px;
+            }
+
+            .about-col-1 img {
+                margin-top: -40px;
+                width: 200px;
+                height: 250px;
+                position: center;
+                border: 4px solid #638a91;
+                box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+                transition: transform 0.4s ease, box-shadow 0.4s ease;
+            }
+
+            /* .about-col-1 img:hover{
+                transform: scale(1.05);
+                box-shadow: 0 0 25px rgba(0, 229, 255, 0.7), 0 0 40px rgba(0, 229, 255, 0.3);
+            } */
+            .about-col-1 profile-img {
+                width: 250px;
+                height: 250px;
+                border-radius: 50%;
+                border: 3px solid #00e5ff;
+                box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+                transition: transform 0.4s ease, box-shadow 0.4s ease;
+            }
+
+            .about-col-1 profile-img :hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 25px rgba(0, 229, 255, 0.7), 0 0 40px rgba(0, 229, 255, 0.3);
+            }
+
+            .about-col-2 {
+                font-size: 14px;
+            }
+
+            .about-col-2 p {
+            margin-top: 10px;
+            margin-left:10px;
+        }
+
+            .tab-links {
+                font-size: 16px;
+                margin-right: 35px;
+                justify-content: right;
+            }
+
+            .tab-contents ul li span {
+                 color: rgb(48, 194, 170);
+            font-size: 20px;
+
+            font-weight: 400;
+            margin-left: 20px;
+        }
+
+         .tab-contents ul li{
+             list-style: none;
+            margin: 10px 0;
+            margin-left: 20px;
+         }
+        }
+    </style>
+</head>
+
+<header>
+    <nav>
+        <div class="left">Gauri Borse</div>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="right" id="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<body>
+
+    <div id="about">
+        <div class="Container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="about1.jpeg" class="profile-img" alt="Profile Image">>
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Hello! I'm Gauri Borse, a passionate and driven Computer Science undergraduate with a
+                        curiosity-fueled mind and a love for turning data into meaningful stories. I thrive at the
+                        intersection of logic and creativity, where code meets design and insights drive innovation.</p>
+                    <p>Currently honing my skills in tools like Python, Excel, SQL, and JavaScript, I'm constantly
+                        exploring new technologies and real-world challenges. I believe in continuous learning,
+                        thoughtful problem-solving, and using tech to bring ideas to life.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('tech skills')">Tech
+                            Skills</p>
+                        <p class="tab-links" onclick="opentab('my journey')">My Journey</p>
+                        <p class="tab-links" onclick=" opentab('soft skills')">Soft-Skills</p>
+                        <p class="tab-links" onclick=" opentab('quick facts')">Quick Facts</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="tech skills">
+                        <ul>
+                            <li><span>📈 Data Analysis</span><br>I analyze and visualize data using tools like Python,
+                                Excel, and Power BI to uncover actionable insights and support data-driven decisions.
+                            </li>
+                            <li><span>🌐 Web Development</span><br>I design and build responsive, user-friendly websites
+                                using HTML, CSS, and JavaScript to create seamless digital experiences.</li>
+                            <li><span>🛠️ Tech tools</span><br>Excel, Powerbi, Tableau, Chatgpt, MS Powerpoint, MS-Word
+                            </li>
+                            <li><span>💻 Programming Language</span><br>Python, C++, JavaScript</li>
+
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="my journey">
+                        <ul>
+                            <li><span>2023-present</span><br>💻 pursuing Computer Engineering - GESRHCOE</li>
+                            <li><span>2024</span><br>👥 Worked in college programs As a Committee head</li>
+                            <li><span>2025</span><br>📝 Presented an Article on the topic “Women’s Safety in the Digital
+                                Age: New Challenges and a Call to Action” in college's Magazine</li>
+                            <li><span>2025</span><br>📊 Completed Deloitte job simulation in Data Analytics via Forage
+                            </li>
+                            <li><span>2025-present</span><br>🚀 Exploring new opportunities, AI-tools, Enhancing my
+                                skills in Data Analytics, Web development and Generative AI</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="soft skills">
+                        <ul>
+                            <li><span>🤝 Team-Collaboration</span><br>I work effectively in team environments,
+                                contributing ideas and supporting group goals to achieve successful outcomes.</li>
+                            <li><span>⏰ Time-Management</span><br>I prioritize tasks efficiently and meet deadlines
+                                consistently while balancing academic and project responsibilities.</li>
+                            <li><span>🗣️ Effective Communication</span><br>ensuring smooth collaboration and idea
+                                exchange.</li>
+                            <li><span>💡 Problem Solving</span><br>I approach challenges analytically, breaking down
+                                problems and applying logical solutions to resolve them efficiently.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="quick facts">
+                        <ul>
+                            <li><span>🧘‍♀️ Yoga</span><br>Practicing yoga keeps me grounded, improves focus, and brings
+                                a perfect balance to my tech-driven day.</li>
+                            <li><span>💃 Dancing</span><br>Dancing is my joyful escape — a blend of rhythm, expression,
+                                and confidence</li>
+                            <li><span>🌿 Exploring Nature</span><br>Being close to nature helps me recharge, think
+                                clearly, and find inspiration beyond screens.</li>
+                            <li><span>💡 Exploring New Technologies</span><br>I’m always curious to explore the latest
+                                tech trends — from AI tools to emerging web and data innovations.</li>
+                        </ul>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        // Toggle nav menu
+        const menuIcon = document.getElementById("menu-icon");
+        const navLinks = document.getElementById("nav-links");
+        let menuOpen = false;
+
+        menuIcon.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+            menuOpen = !menuOpen;
+            this.innerHTML = menuOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+    </script>
+</body>
+
+</html>

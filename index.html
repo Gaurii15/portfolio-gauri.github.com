@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gauri Borse | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #0f0f0f, #383333);
+            color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            background: linear-gradient(to right, #1c1b1b, #3d3b3b);
+            color: #f0f0f0;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .left {
+            font-size: 2rem;
+            color: rgb(223, 225, 218);
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        .right ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: rgb(76, 185, 178);
+            font-size: 1.07rem;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 90px 0;
+            flex-wrap: wrap;
+        }
+
+        .firstSection div {
+            width: 40%;
+        }
+
+        .leftSection {
+            opacity: 0;
+            animation: zoomIn 1s ease-in-out forwards;
+            animation-delay: 0.2s;
+        }
+
+        .leftSection div {
+            width: 100%;
+        }
+
+        .intro-main {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .intro-sub {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .intro-typed {
+            font-size: 1.3rem;
+            color: aqua;
+            min-height: 30px;
+        }
+
+        .rightSection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            animation: zoomIn 1.2s ease-in-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        .rightSection img {
+            width: 300px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #13444d;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+        }
+
+        .purple {
+            color: aqua;
+        }
+
+        #element {
+            color: aqua;
+            font-size: 1.5rem;
+        }
+
+        @keyframes zoomIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px 0;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer .social-icons {
+            display: flex;
+            gap: 30px;
+        }
+
+        footer .social-icons a {
+            color: aqua;
+            font-size: 1.8rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+        }
+
+        footer .social-icons a:hover {
+            color: white;
+            transform: scale(1.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .right {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #1c1b1b;
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 0;
+                z-index: 100;
+            }
+
+            .right ul {
+                flex-direction: column;
+            }
+
+            .right ul li {
+                margin: 15px 0;
+            }
+
+            .right.active {
+                display: flex;
+            }
+
+            .firstSection {
+                flex-direction: column;
+            }
+
+            .firstSection div {
+                width: 80%;
+            }
+
+            .rightSection {
+                order: -1;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Gauri Borse</div>
+            <div class="menu-icon" id="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="right" id="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="certificates.html">Certificates</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="firstSection">
+            <div class="rightSection">
+                <img src="Gauri.jpeg" alt="Gauri Borse" />
+            </div>
+
+            <div class="leftSection">
+                <div class="intro-main">Hi, I'm <span class="purple">Gauri!</span></div>
+                <div class="intro-sub">Future-Ready Analyst and Web Developer</div>
+                <div class="intro-typed"><span id="element"></span></div>
+
+                <footer>
+                    <div class="social-icons">
+                        <a href="https://github.com/gaurii15" target="_blank" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/gauri-borse/" target="_blank" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="mailto:borsegauri1509@gmail.com" target="_blank" aria-label="Email"><i
+                                class="fas fa-envelope"></i></a>
+                        <a href="https://instagram.com/_gauriborse_15" target="_blank" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </footer>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Aspiring Data Analyst', 'Web Development Enthusiast'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true
+        });
+
+        // Toggle nav menu
+        const menuIcon = document.getElementById("menu-icon");
+        const navLinks = document.getElementById("nav-links");
+        let menuOpen = false;
+
+        menuIcon.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+            menuOpen = !menuOpen;
+            this.innerHTML = menuOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Gauri Borse</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #0f0f0f, #3f3e3e);
+            color: rgb(193, 218, 239);
+            overflow-x: hidden;
+            animation: fadeZoomIn 1.2s ease-out;
+        }
+
+        nav {
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            background: linear-gradient(to right, #1c1b1b, #3d3b3b);
+            color: #f0f0f0;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .left {
+            font-size: 2rem;
+            color: rgb(223, 225, 218);
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        .right ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: rgb(76, 185, 178);
+            font-size: 1.07rem;
+        }
+
+
+        #portfolio {
+            padding: 20px;
+        }
+
+        .sub-title {
+            padding: 2rem;
+            text-align: center;
+            font-size: 2.5rem;
+            color: aqua;
+        }
+
+        .work-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .work {
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .work img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .layer {
+            width: 100%;
+            height: 0%;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), #73cacf);
+            border-radius: 10px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 20px;
+            text-align: center;
+            font-size: 14px;
+            transition: height 0.5s;
+        }
+
+        .work:hover img {
+            transform: scale(1.1);
+        }
+
+        .work:hover .layer {
+            height: 100%;
+        }
+
+        .layer h3 {
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .layer p {
+            margin-bottom: 10px;
+        }
+
+        .layer .btns {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .layer a {
+            background: #fff;
+            color: #30768a;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .layer a:hover {
+            background: #ddd;
+        }
+
+        .btn-see-more {
+            display: block;
+            margin: 40px auto 0;
+            border: 1px solid aqua;
+            padding: 14px 40px;
+            border-radius: 6px;
+            color: white;
+            background: transparent;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-see-more:hover {
+            background: #275967;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @keyframes fadeZoomIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.98) translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .right {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #1c1b1b;
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 0;
+                z-index: 100;
+            }
+
+            .right ul {
+                flex-direction: column;
+            }
+
+            .right ul li {
+                margin: 15px 0;
+            }
+
+            .right.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<header>
+    <nav>
+        <div class="left">Gauri Borse</div>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="right" id="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<body>
+
+    <div id="portfolio">
+        <h1 class="sub-title">My Projects</h1>
+
+        <div class="work-list" id="projectContainer">
+            <!-- Visible Projects -->
+            <!-- Hidden Projects -->
+            <div class="work">
+                <img src="final.webp" class="resize-img" alt="Project 1">
+                <div class="layer">
+                    <h3>Portfolio Website</h3>
+                    <p>A responsive and visually engaging personal portfolio website showcasing my projects, skills, and
+                        experience.</p>
+                    <div class="btns">
+                        <a href="https://live-site.com" target="_blank">View Live (Not Available)</a>
+                        <a href="https://github.com/Gaurii15/Portfolio" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="work">
+                <img src="snake game.jpg" alt="Snake Game">
+                <div class="layer">
+                    <h3>Snake With Gauri</h3>
+                    <p>Classic Snake Game in Python with Tkinter GUI support.</p>
+                    <div class="btns">
+                        <a href="https://live-site.com" target="_blank">View Live (Not Available)</a>
+                        <a href="https://github.com/Gaurii15/SnakeWithGauri" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="work">
+                <img src="chatbot2.png" alt="AI Chatbot">
+                <div class="layer">
+                    <h3>AI Chatbot</h3>
+                    <p>A simple chatbot built using HTML, CSS, and JavaScript.</p>
+                    <div class="btns">
+                        <a href="https://live-site.com" target="_blank">View Live (Not Available)</a>
+                        <a href="https://github.com/Gaurii15/AiChatBot.github.io" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hidden Projects -->
+            <div class="work hidden">
+                <img src="currency converter.jpg" alt="Currency Converter">
+                <div class="layer">
+                    <h3>Currency Converter</h3>
+                    <p>A simple and fast currency converter app using real-time rates.</p>
+                    <div class="btns">
+                        <a href="https://live-site.com" target="_blank">View Live (Not Available)</a>
+                        <a href="https://github.com/Gaurii15/CurrencyConverter" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more projects with class "hidden" -->
+        </div>
+
+        <button class="btn-see-more" onclick="showMoreProjects()">See more</button>
+    </div>
+
+    <script>
+        function showMoreProjects() {
+            const hiddenProjects = document.querySelectorAll('.work.hidden');
+            hiddenProjects.forEach(project => project.classList.remove('hidden'));
+            document.querySelector('.btn-see-more').style.display = 'none';
+        }
+
+         // Toggle nav menu
+        const menuIcon = document.getElementById("menu-icon");
+        const navLinks = document.getElementById("nav-links");
+        let menuOpen = false;
+
+        menuIcon.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+            menuOpen = !menuOpen;
+            this.innerHTML = menuOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+    </script>
+
+</body>
+
+</html>

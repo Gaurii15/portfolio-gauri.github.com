@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificates</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #0f0f0f, #302f2f);
+            color: #fff;
+            animation: fadeZoomIn 1.2s ease-out;
+        }
+
+        nav {
+             position: fixed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            background: linear-gradient(to right, #1c1b1b, #3d3b3b);
+            color: #f0f0f0;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .left {
+            font-size: 2rem;
+            color: rgb(223, 225, 218);
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        .right ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: rgb(76, 185, 178);
+            font-size: 1.07rem;
+        }
+
+
+        .container {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 40px;
+            color: aqua;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            transition: transform 0.4s;
+        }
+
+        h1:hover {
+            color: #089a9a;
+            transform: translateY(-5px);
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: rgb(72, 196, 196);
+            margin-bottom: 2rem;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .cert-card {
+            background-color: black;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgb(47, 174, 174);
+        }
+
+        .cert-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: rgb(72, 196, 196);
+        }
+
+        .cert-org {
+            font-size: 0.95rem;
+            color: #ccc;
+            margin-bottom: 0.3rem;
+        }
+
+        .cert-date {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        .view-btn {
+            color: orange;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .view-btn:hover {
+            text-decoration: underline;
+        }
+
+        
+
+        @keyframes fadeZoomIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.98) translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+             h1 {
+                font-size: 2rem;
+            }
+            .menu-icon {
+                display: block;
+            }
+
+            .right {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #1c1b1b;
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 0;
+                z-index: 100;
+            }
+
+            .right ul {
+                flex-direction: column;
+            }
+
+            .right ul li {
+                margin: 15px 0;
+            }
+
+            .right.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<header>
+    <nav>
+        <div class="left">Gauri Borse</div>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="right" id="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<body>
+    <div class="container">
+        <h1>Certificates</h1>
+        <p class="subtitle">"Certificates reflect not just achievement, but dedication to continuous learning." 🎓</p>
+
+        <div class="cert-grid">
+            <!-- Certificate 1 -->
+            <div class="cert-card">
+                <div class="cert-title">Deloitte Australia - Data Analytics Job Simulation</div>
+                <div class="cert-org">Forage</div>
+                <div class="cert-date">Issued Jun 2025</div>
+                <a class="view-btn" href="Deloitte data analytics.pdf" target="_blank">View Certificate</a>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="cert-card">
+                <div class="cert-title">JPMorgan Chase & Co. - Excel Skills Job Simulation of Goldman Sachs</div>
+                <div class="cert-org">Forage</div>
+                <div class="cert-date">Nov 2024</div>
+                <a class="view-btn" href="Excel skill certification.pdf" target="_blank">View Certificate</a>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="cert-card">
+                <div class="cert-title">Microsoft Power BI Course Completion</div>
+                <div class="cert-org">ISO</div>
+                <div class="cert-date">Apr 2025</div>
+                <a class="view-btn" href="powerbi.pdf" target="_blank">View Certificate</a>
+            </div>
+
+            <!-- Certificate 4 -->
+            <div class="cert-card">
+                <div class="cert-title">Developer and Technology Job Simulation by Accenture</div>
+                <div class="cert-org">Forage</div>
+                <div class="cert-date">Nov 2024</div>
+                <a class="view-btn" href="Accenture certificate.pdf" target="_blank">View Certificate</a>
+            </div>
+
+            <!-- Certificate 4 -->
+            <div class="cert-card">
+                <div class="cert-title">Python course Completion</div>
+                <div class="cert-org">Geekster</div>
+                <div class="cert-date">Sept 2024</div>
+                <a class="view-btn" href="Accenture certificate.pdf" target="_blank">View Certificate</a>
+            </div>
+
+            <!-- Certificate 4 -->
+            <div class="cert-card">
+                <div class="cert-title">Azure AI Services and Concepts</div>
+                <div class="cert-org">Ratan Tata Maharashtra State Skill University</div>
+                <div class="cert-date">Feb/Mar 2025</div>
+                <a class="view-btn" href="Azure AI.pdf" target="_blank">View Certificate</a>
+            </div>
+
+            <!-- Certificate 4 -->
+            <div class="cert-card">
+                <div class="cert-title">Google Cloud Computing Foundations pathway</div>
+                <div class="cert-org">GDGC-GES-COENGG</div>
+                <div class="cert-date">2024</div>
+                <a class="view-btn" href="GDGC.pdf" target="_blank">View Certificate</a>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="cert-card">
+                <div class="cert-title">Web Development Bootcamp</div>
+                <div class="cert-org">Skill Ected</div>
+                <div class="cert-date">December 2024</div>
+                <a class="view-btn" href="HTML CSS Bootcamp.jpeg" target="_blank">View Certificate</a>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="cert-card">
+                <div class="cert-title">Generative AI : Build your own AI model Workshop</div>
+                <div class="cert-org">NxtWave</div>
+                <div class="cert-date">May 2025</div>
+                <a class="view-btn" href="GenAiWorkshop.jpeg" target="_blank">View Certificate</a>
+            </div>
+
+            <!-- More certificates can be added below using same structure -->
+        </div>
+    </div>
+
+    <script>
+  const menuIcon = document.getElementById("menu-icon");
+  const navLinks = document.getElementById("nav-links");
+  let menuOpen = false;
+
+  menuIcon.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
+    menuOpen = !menuOpen;
+    this.innerHTML = menuOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+  });
+</script>
+
+</body>
+
+</html>
