@@ -123,10 +123,22 @@
             border-radius: 50%;
             border: 4px solid #13444d;
             box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .rightSection img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.7), 0 0 40px rgba(0, 229, 255, 0.3)
         }
 
         .purple {
             color: aqua;
+            transition: transform 0.4s;
+        }
+
+        .purple:hover {
+            color: #089a9a;
+            transform: translateY(-5px);
         }
 
         #element {
