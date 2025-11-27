@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Gauri Borse</title>
+
+    <!-- ADDED: Font Awesome so the hamburger icon renders -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
@@ -14,40 +16,58 @@
             box-sizing: border-box;
         }
 
+        /* ================= GENERAL STYLES ================= */
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #0f0f0f, #3f3e3e);
-            color: rgb(193, 218, 239);
-            overflow-x: hidden;
-            animation: fadeZoomIn 1.2s ease-out;
+            margin: 0;
+            font-family: Poppins, sans-serif;
+            background: linear-gradient(180deg, #000000, #0a0a0a, #111);
+            color: white;
         }
 
+        /* Page container */
+        /* .about-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+} */
+
+        /* ================= HEADER ================= */
+        /* .about-title {
+   display: inline-block;                 helps with clipping in some layouts
+  font-size: 45px;
+  font-weight: 700;
+  background: linear-gradient(to right, #00eaff, #a8faff);
+  -webkit-background-clip: text;         Chrome, Edge, Safari */
+        /* background-clip: text;                 unprefixed (keeps linters happy) */
+        /* -webkit-text-fill-color: transparent;  makes the gradient visible */
+        /* color: transparent;                    /* fallback */
+        /* margin-bottom: 40px;
+} */
+
+        /* ------------------ NAVBAR ------------------ */
         nav {
-            position: fixed;
+            height: 70px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
-            background: linear-gradient(to right, #1c1b1b, #3d3b3b);
-            color: #f0f0f0;
-            padding: 0 20px;
-            position: relative;
+            padding: 0 30px;
+            background: rgba(20, 20, 20, 0.65);
+            backdrop-filter: blur(15px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
         }
 
-        .left {
-            font-size: 2rem;
-            color: rgb(223, 225, 218);
-        }
-
-        .menu-icon {
-            display: none;
+        nav .left {
             font-size: 1.8rem;
-            cursor: pointer;
+            font-weight: 600;
+            color: aqua;
+            letter-spacing: 1px;
         }
 
-        .right ul {
+        nav ul {
             display: flex;
-            justify-content: center;
         }
 
         nav ul li {
@@ -56,168 +76,213 @@
         }
 
         nav ul li a {
+            color: #e5f6f6;
             text-decoration: none;
-            color: white;
             font-weight: 500;
+            transition: 0.3s;
         }
 
         nav ul li a:hover {
-            color: rgb(76, 185, 178);
-            font-size: 1.07rem;
+            color: aqua;
         }
 
+        .menu-icon {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: white;
+            z-index: 200;
+            /* ensure icon sits above other elements on small screens */
+        }
 
+        /* ------------------ ABOUT SECTION ------------------ */
         #about {
-            padding: 80px 0;
-            color: rgb(186, 203, 210)
+            padding: 120px 40px 60px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
         }
 
         .row {
             display: flex;
             justify-content: space-between;
+            /* align-items: center; */
             flex-wrap: wrap;
+            gap: 40px;
         }
 
-        .about-col-1 {
-            flex-basis: 35%;
-
+        /* LEFT - IMAGE */
+        .about-img-box {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            width: 330px;
+            height: 330px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
         }
 
-        .about-col-1 img {
-            margin-top: 30px;
-            width: 300px;
-            height: 350px;
-            object-fit: cover;
+        .about-img-box img {
+
+            width: 260px;
+            height: 260px;
             border-radius: 50%;
-            border: 4px solid #638a91;
-            position: center;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-            margin-left: 100px;
+            object-fit: cover;
+            border: 3px solid aqua;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.35);
+            transition: 0.4s;
+            animation: zoomIn 1.2s ease-in-out forwards;
         }
 
-        .about-col-2 {
-            margin-top: -50px;
-            flex-basis: 60%;
+        .about-img-box img:hover {
+            transform: scale(1.05);
         }
 
-        .about-col-2 p {
-            margin-top: 10px;
+        /* RIGHT - TEXT */
+        .about-content {
+            flex: 1;
+            min-width: 300px;
         }
 
         .sub-title {
-            color: aqua;
-            margin-top: 40px;
-            font-size: 45px;
+            font-size: 48px;
             font-weight: 700;
-            transition: transform 0.4s;
+            color: aqua;
+            margin-bottom: 15px;
         }
 
-        .sub-title:hover {
-            color: #089a9a;
-            transform: translateY(-5px);
+        .about-content p {
+            color: #d1e5ec;
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 16px;
         }
 
-        .tab-titles {
+
+
+
+        /* ================= NEW TAB BUTTON SYSTEM ================= */
+        .section-buttons {
             display: flex;
-            margin: 20px 0 40px;
-            color: rgb(235, 91, 87)
+            gap: 12px;
+            overflow-x: auto;
+            padding-bottom: 10px;
         }
 
-        .tab-titles:hover {
-            color: rgb(169, 99, 91);
-            font-size: 2rem;
-
-        }
-
-
-        .tab-links {
-            margin-right: 50px;
-
-            font-size: 18px;
-            font-weight: 500px;
+        .section-buttons button {
+            background: #111;
+            color: #00eaff;
+            padding: 10px 18px;
+            border: 1px solid #00eaff;
+            border-radius: 25px;
             cursor: pointer;
-            position: relative;
-
+            font-size: 15px;
+            transition: 0.3s;
+            white-space: nowrap;
         }
 
-        .tab-links::after {
-            content: '';
-            width: 0;
-            height: 3px;
-            background: red;
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-            transition: 0.5s;
-
+        .section-buttons button:hover,
+        .section-buttons button.active {
+            background: #00eaff;
+            color: #000;
         }
 
-        .tab-links.active-link::after {
-            width: 50%;
-        }
-
-        .tab-contents ul li {
-            list-style: none;
-            margin: 10px 0;
-        }
-
-        .tab-contents ul li span {
-
-            color: rgb(48, 194, 170);
-            font-size: 20px;
-
-            font-weight: 400;
-
-
-            /* Bold */
-
-        }
-
-
-        .tab-contents {
+        /* ================= SECTION ================= */
+        .section {
             display: none;
+            margin-top: 30px;
+            animation: fadeIn 0.6s ease;
         }
 
-        .tab-contents.active-tab {
-            display: block;
-        }
-
-        .profile-img {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            border: 3px solid #00e5ff;
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        /* Hover effect */
-        .profile-img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(0, 229, 255, 0.7), 0 0 40px rgba(0, 229, 255, 0.3);
-        }
-
-
-        @keyframes fadeZoomIn {
-            0% {
+        @keyframes fadeIn {
+            from {
                 opacity: 0;
-                transform: scale(0.98) translateY(20px);
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ================= CARD GRID ================= */
+        .card-grid {
+
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+            justify-content: center;
+
+        }
+
+        /* ================= CARD STYLE ================= */
+        .card {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 234, 255, 0.3);
+            backdrop-filter: blur(8px);
+            transition: 0.4s;
+            text-align: center;
+        }
+
+        .card:hover {
+            border-color: #00eaff;
+            transform: translateY(-8px);
+            box-shadow: 0 0 25px rgba(0, 234, 255, 0.35);
+        }
+
+        /* ================= CARD ICON ================= */
+        .card img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 12px;
+            filter: drop-shadow(0 0 6px #00eaff);
+        }
+
+        /* Card title */
+        .card h3 {
+            margin: 10px 0;
+            font-size: 21px;
+            color: #00eaff;
+        }
+
+        /* Page Zoom-In Animation - Slower + Delay */
+        .page-zoom {
+            animation: zoomIn 1s ease-out 0.2s forwards;
+            /* duration 1s, delay 0.2s */
+            transform: scale(0.9);
+            opacity: 0;
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.9);
+                opacity: 0;
             }
 
             100% {
+                transform: scale(1);
                 opacity: 1;
-                transform: scale(1) translateY(0);
             }
         }
 
-        /* Zoom-in Animation */
-        .zoom-in {
-            opacity: 0;
-            transform: scale(0.95);
-            animation: zoomInFade 1s ease-out forwards;
-            animation-delay: 0.3s;
+
+
+        /* ================= QUICK FACTS ================= */
+        .facts-list li {
+            margin-bottom: 12px;
+            list-style: "⭐ ";
+            font-size: 16px;
         }
 
+        /* ================= MOBILE FIX ================= */
         @media only screen and (max-width: 600px) {
 
             .menu-icon {
@@ -248,88 +313,19 @@
             .right.active {
                 display: flex;
             }
-
-            .sub-title {
-                font-size: 30px;
-                margin-left: 20px;
-            }
-
-            .about-col-1,
-            .about-col-2 {
-                flex-basis: 50%;
-                position: left;
-            }
-
-            .about-col-1 {
-                margin-bottom: 30px;
-            }
-
-            .about-col-1 img {
-                margin-top: -40px;
-                width: 200px;
-                height: 250px;
-                position: center;
-                border: 4px solid #638a91;
-                box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-                transition: transform 0.4s ease, box-shadow 0.4s ease;
-            }
-
-            /* .about-col-1 img:hover{
-                transform: scale(1.05);
-                box-shadow: 0 0 25px rgba(0, 229, 255, 0.7), 0 0 40px rgba(0, 229, 255, 0.3);
-            } */
-            .about-col-1 profile-img {
-                width: 250px;
-                height: 250px;
-                border-radius: 50%;
-                border: 3px solid #00e5ff;
-                box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
-                transition: transform 0.4s ease, box-shadow 0.4s ease;
-            }
-
-            .about-col-1 profile-img :hover {
-                transform: scale(1.05);
-                box-shadow: 0 0 25px rgba(0, 229, 255, 0.7), 0 0 40px rgba(0, 229, 255, 0.3);
-            }
-
-            .about-col-2 {
-                font-size: 14px;
-            }
-
-            .about-col-2 p {
-            margin-top: 10px;
-            margin-left:10px;
-        }
-
-            .tab-links {
-                font-size: 16px;
-                margin-right: 35px;
-                justify-content: right;
-            }
-
-            .tab-contents ul li span {
-                 color: rgb(48, 194, 170);
-            font-size: 20px;
-
-            font-weight: 400;
-            margin-left: 20px;
-        }
-
-         .tab-contents ul li{
-             list-style: none;
-            margin: 10px 0;
-            margin-left: 20px;
-         }
         }
     </style>
 </head>
 
-<header>
+<body class="page-zoom">
+
     <nav>
         <div class="left">Gauri Borse</div>
+
         <div class="menu-icon" id="menu-icon">
             <i class="fas fa-bars"></i>
         </div>
+
         <div class="right" id="nav-links">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -341,121 +337,287 @@
             </ul>
         </div>
     </nav>
-</header>
 
-<body>
-
-    <div id="about">
-        <div class="Container">
+    <section id="about">
+        <div class="container">
             <div class="row">
-                <div class="about-col-1">
-                    <img src="about1.jpeg" class="profile-img" alt="Profile Image">>
+
+                <!-- LEFT IMAGE -->
+                <div class="about-img-box">
+                    <img src="about1.jpeg" alt="Profile Image">
                 </div>
-                <div class="about-col-2">
+
+                <!-- RIGHT CONTENT -->
+                <div class="about-content">
                     <h1 class="sub-title">About Me</h1>
-                    <p>Hello! I'm Gauri Borse, a passionate and driven Computer Science undergraduate with a
-                        curiosity-fueled mind and a love for turning data into meaningful stories. I thrive at the
-                        intersection of logic and creativity, where code meets design and insights drive innovation.</p>
-                    <p>Currently honing my skills in tools like Python, Excel, SQL, and JavaScript, I'm constantly
-                        exploring new technologies and real-world challenges. I believe in continuous learning,
-                        thoughtful problem-solving, and using tech to bring ideas to life.</p>
 
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('tech skills')">Tech
-                            Skills</p>
-                        <p class="tab-links" onclick="opentab('my journey')">My Journey</p>
-                        <p class="tab-links" onclick=" opentab('soft skills')">Soft-Skills</p>
-                        <p class="tab-links" onclick=" opentab('quick facts')">Quick Facts</p>
-                    </div>
-                    <div class="tab-contents active-tab" id="tech skills">
-                        <ul>
-                            <li><span>📈 Data Analysis</span><br>I analyze and visualize data using tools like Python,
-                                Excel, and Power BI to uncover actionable insights and support data-driven decisions.
-                            </li>
-                            <li><span>🌐 Web Development</span><br>I design and build responsive, user-friendly websites
-                                using HTML, CSS, and JavaScript to create seamless digital experiences.</li>
-                            <li><span>🛠️ Tech tools</span><br>Excel, Powerbi, Tableau, Chatgpt, MS Powerpoint, MS-Word
-                            </li>
-                            <li><span>💻 Programming Language</span><br>Python, C++, JavaScript</li>
+                    <p>Hello! I'm <b>Gauri Borse</b>, a passionate Computer Science undergraduate with a keen interest
+                        in data analysis, programming, and web development. I enjoy transforming raw data into
+                        actionable insights and creating engaging digital experiences. Skilled in Python, SQL, Excel,
+                        Power BI, HTML, CSS, and JavaScript, I love exploring new technologies and applying them to
+                        solve real-world problems.</p>
 
-                        </ul>
+                    <p>I have hands-on experience with projects, simulations, and research, and I actively participate
+                        in college initiatives, aiming to grow as a data analyst and tech innovator. Outside of tech, I
+                        enjoy yoga, dance, and exploring nature, which keep me balanced and inspired.</p>
+
+                    <!-- NEW TAB SYSTEM -->
+                    <div class="section-buttons">
+                        <button class="active" onclick="showSection('skills')">Tech Skills</button>
+                        <button onclick="showSection('tools')">Tools</button>
+                        <button onclick="showSection('soft')">Soft Skills</button>
+                        <button onclick="showSection('journey')">My Journey</button>
+                        <button onclick="showSection('facts')">Quick Facts</button>
                     </div>
 
-                    <div class="tab-contents" id="my journey">
-                        <ul>
-                            <li><span>2023-present</span><br>💻 pursuing Computer Engineering - GESRHCOE</li>
-                            <li><span>2024</span><br>👥 Worked in college programs As a Committee head</li>
-                            <li><span>2025</span><br>📝 Presented an Article on the topic “Women’s Safety in the Digital
-                                Age: New Challenges and a Call to Action” in college's Magazine</li>
-                            <li><span>2025</span><br>📊 Completed Deloitte job simulation in Data Analytics via Forage
-                            </li>
-                            <li><span>2025-present</span><br>🚀 Exploring new opportunities, AI-tools, Enhancing my
-                                skills in Data Analytics, Web development and Generative AI</li>
-                        </ul>
+                    <!-- ================= SECTIONS ================= -->
+
+                    <!-- ⭐ TECH SKILLS -->
+                    <div class="section" id="skills" style="display:block;">
+                        <div class="card-grid">
+
+                            <div class="card">
+                                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png">
+                                <h3>Python</h3>
+                                <p>Write efficient code for data analysis, automation, and projects.</p>
+                            </div>
+
+                            <div class="card">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
+                                <h3>Data Analysis</h3>
+                                <p>I analyze and visualize data using tools like Python, Excel, and Power BI to uncover
+                                    actionable insights and support data-driven decisions.</p>
+                            </div>
+
+                            <div class="card">
+                                <img src="https://cdn-icons-png.flaticon.com/512/3222/3222765.png">
+                                <h3>SQL</h3>
+                                <p>Proficient in SQL for querying, managing, and analyzing data efficiently. Skilled in
+                                    writing complex queries, joins, and optimizing databases for insights.</p>
+                            </div>
+
+                            <div class="card">
+                                <img src="https://cdn-icons-png.flaticon.com/512/919/919852.png">
+                                <h3>Python Libraries</h3>
+                                <p>Experienced with Python libraries like Pandas, NumPy, and Matplotlib for data
+                                    analysis, manipulation, and visualization.</p>
+                            </div>
+
+                            <div class="card">
+                                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png">
+                                <h3>Data Visualization</h3>
+                                <p>Create insightful visualizations and interactive dashboards using Excel, Power BI,
+                                    and Tableau to help interpret and communicate data effectively</p>
+                            </div>
+
+                            <div class="card">
+                                <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png">
+                                <h3>Web Development (HTML, CSS, JavaScript)</h3>
+                                <p>Design and build responsive, user-friendly websites with HTML, CSS, and JavaScript,
+                                    combining structure, style, and interactivity.</p>
+                            </div>
+
+                        </div>
                     </div>
 
-                    <div class="tab-contents" id="soft skills">
-                        <ul>
-                            <li><span>🤝 Team-Collaboration</span><br>I work effectively in team environments,
-                                contributing ideas and supporting group goals to achieve successful outcomes.</li>
-                            <li><span>⏰ Time-Management</span><br>I prioritize tasks efficiently and meet deadlines
-                                consistently while balancing academic and project responsibilities.</li>
-                            <li><span>🗣️ Effective Communication</span><br>ensuring smooth collaboration and idea
-                                exchange.</li>
-                            <li><span>💡 Problem Solving</span><br>I approach challenges analytically, breaking down
-                                problems and applying logical solutions to resolve them efficiently.</li>
-                        </ul>
+                    <!-- ⭐ TOOLS SECTION -->
+                    <div class="section" id="tools">
+                        <div class="card-grid">
+
+                            <div class="card">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1055/1055689.png">
+                                <h3>PowerBi</h3>
+                                <p>Interactive dashboards and visualizations to turn data into insights.</p>
+                            </div>
+
+                            <div class="card">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
+                                <h3>Tableau</h3>
+                                <p>Dynamic data visualization and business intelligence made simple</p>
+                            </div>
+
+                            <div class="card">
+                                <img src="https://cdn-icons-png.flaticon.com/512/906/906334.png">
+                                <h3>Jupyter Notebook</h3>
+                                <p>Exploratory data analysis & Python.</p>
+                            </div>
+
+                            <div class="card">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1055/1055689.png">
+                                <h3>Excel</h3>
+                                <p>Powerful spreadsheet tool for data analysis, visualization, and calculations.</p>
+                            </div>
+
+                            <div class="card">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111288.png">
+                                <h3>Git & GitHub</h3>
+                                <p>Version control & collaboration.</p>
+                            </div>
+
+
+                            <div class="card">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
+                                <h3>Google spreadsheets</h3>
+                                <p>Cloud-based spreadsheet for real-time collaboration and data management.</p>
+                            </div>
+
+                            <div class="card">
+                                <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png">
+                                <h3>MS Office</h3>
+                                <p>Essential productivity tools for documentation, analysis, and presentations.</p>
+                            </div>
+
+                            <div class="card">
+                                <img src="https://cdn-icons-png.flaticon.com/512/906/906324.png">
+                                <h3>VS Code</h3>
+                                <p>Primary development environment.</p>
+                            </div>
+
+                        </div>
                     </div>
 
-                    <div class="tab-contents" id="quick facts">
-                        <ul>
-                            <li><span>🧘‍♀️ Yoga</span><br>Practicing yoga keeps me grounded, improves focus, and brings
-                                a perfect balance to my tech-driven day.</li>
-                            <li><span>💃 Dancing</span><br>Dancing is my joyful escape — a blend of rhythm, expression,
-                                and confidence</li>
-                            <li><span>🌿 Exploring Nature</span><br>Being close to nature helps me recharge, think
-                                clearly, and find inspiration beyond screens.</li>
-                            <li><span>💡 Exploring New Technologies</span><br>I’m always curious to explore the latest
-                                tech trends — from AI tools to emerging web and data innovations.</li>
-                        </ul>
+                    <!-- ⭐ SOFT SKILLS SECTION -->
+                    <div class="section" id="soft">
+                        <div class="card-grid">
+
+                            <div class="card">
+                                <h3>Analytical Thinking</h3>
+                                <p>Solving problems by breaking them into logical parts.</p>
+                            </div>
+                            <div class="card">
+                                <h3>Communication</h3>
+                                <p>Clear & confident communication.</p>• English (Professional) • Hindi(Professional)
+                                •Marathi (Regional)
+                            </div>
+                            <div class="card">
+                                <h3>Teamwork</h3>
+                                <p>Cooperative & supportive in groups.</p>
+                            </div>
+                            <div class="card">
+                                <h3>Time Management</h3>
+                                <p>Organized & deadline-oriented.</p>
+                            </div>
+                            <div class="card">
+                                <h3>Problem Solving</h3>
+                                <p>Creative approach to challenges.</p>
+                            </div>
+                            <div class="card">
+                                <h3>Observation</h3>
+                                <p>Keen observation helps in understanding details and making informed decisions.</p>
+                            </div>
+
+                        </div>
                     </div>
 
+                    <!-- ⭐ JOURNEY SECTION -->
+                    <div class="section" id="journey">
+                        <div class="card">
+                            <h3>My Learning Journey</h3>
+                            <div class="card">
+
+                                <h3>2023-present</h3>
+                                <p>pursuing Computer Engineering - GESRHCOE</p>
+                            </div>
+
+                            <div class="card">
+
+                                <h3>2024 - Leadership</h3>
+                                <p>👥 Worked in college programs As a Committee head</p>
+                            </div>
+
+                            <div class="card">
+
+                                <h3>2024 - Achievement</h3>
+                                <p>Completed Google Cloud Computing Foundations Pathway and got a swags and certificate.
+                                </p>
+                            </div>
 
 
+                            <div class="card">
+
+                                <h3>2025 - Earned certificates</h3>
+                                <p>Started my Data Analytics Journey</p>
+                            </div>
+
+
+                            <div class="card">
+
+                                <h3>2025 - Published an article in magazine</h3>
+                                <p>📝 Presented an Article on the topic “Women’s Safety in the Digital
+                                    Age: New Challenges and a Call to Action” in college's Magazine</p>
+                            </div>
+
+                            <div class="card">
+
+                                <h3>2025 - Earned certification</h3>
+                                <p>📜 Officially earned the Oracle Cloud Infrastructure 2025 certified Data Science
+                                    Professional Certification</p>
+                            </div>
+
+                            <div class="card">
+
+                                <h3>2025 - Projects development</h3>
+                                <p>Developed my Data Analytics Projects and exploring new technologies</p>
+                            </div>
+
+
+                            <div class="card">
+
+                                <h3>2025 - Hackathon</h3>
+                                <p>Participated in Smart India Hackathon with a great team members</p>
+                            </div>
+
+                            <div class="card">
+
+                                <h3>2025 - Internship</h3>
+                                <p>Successfully completed my internship, gaining hands-on experience as a Data Mangement
+                                    Operator </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--  QUICK FACTS -->
+                    <div class="section" id="facts">
+                        <div class="card">
+                            <h3>Quick Facts</h3>
+                            <ul>
+                                <li><span>🧘 Yoga – Keeps me balanced and calm.</span></li>
+                                <li><span>💃 Dancing – My favorite energy booster.</span></li>
+                                <li><span>📃 Loves Writing – Expressing thoughts creatively.</span></li>
+
+                                <li><span>🌿 Nature Lover – Feel grounded outdoors.</span></li>
+
+                                <li><span>☀️ Lifestyle – Early start, focused routine.</span></li>
+                                <li><span>💡 Exploring New Tech – Always curious to learn.</span></li>
+                            </ul>
+                        </div>
+                    </div>
 
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- JavaScript -->
-    <script>
+                <!-- ================= JAVASCRIPT ================= -->
+                <script>
+                    function showSection(id) {
+                        document.querySelectorAll(".section").forEach(s => s.style.display = "none");
+                        document.getElementById(id).style.display = "block";
 
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
+                        document.querySelectorAll(".section-buttons button")
+                            .forEach(b => b.classList.remove("active"));
+                        event.target.classList.add("active");
+                    }
 
-        function opentab(tabname) {
-            for (tablink of tablinks) {
-                tablink.classList.remove("active-link");
-            }
-            for (tabcontent of tabcontents) {
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
+                    // Toggle nav menu
+                    const menuIcon = document.getElementById("menu-icon");
+                    const navLinks = document.getElementById("nav-links");
+                    let menuOpen = false;
 
-        // Toggle nav menu
-        const menuIcon = document.getElementById("menu-icon");
-        const navLinks = document.getElementById("nav-links");
-        let menuOpen = false;
+                    menuIcon.addEventListener("click", function () {
+                        navLinks.classList.toggle("active");
+                        menuOpen = !menuOpen;
+                        this.innerHTML = menuOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+                    });
+                </script>
 
-        menuIcon.addEventListener("click", function () {
-            navLinks.classList.toggle("active");
-            menuOpen = !menuOpen;
-            this.innerHTML = menuOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-    </script>
 </body>
 
 </html>
