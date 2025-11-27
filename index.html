@@ -158,6 +158,29 @@
             }
         }
 
+        .buttons {
+            /* margin-top: 20px; */
+            display: flex;
+            gap: 20px;
+            transition: transform 0.4s;
+            margin-bottom: 30px;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            background-color: #00ffff;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .buttons a:hover {
+            background-color: #089a9a;
+            transform: translateY(-5px);
+        }
+
         footer {
             margin-top: 40px;
             padding: 20px 0;
@@ -271,6 +294,11 @@
                                 class="fas fa-envelope"></i></a>
                         <a href="https://instagram.com/_gauriborse_15" target="_blank" aria-label="Instagram"><i
                                 class="fab fa-instagram"></i></a>
+                    </div>
+
+                    <div class="buttons">
+                        <a href="Resume1.pdf" download>Download Resume</a>
+
                     </div>
                 </footer>
             </div>
