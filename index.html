@@ -23,20 +23,22 @@
         }
 
         nav {
-            position: fixed;
+            height: 70px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
+            padding: 0 30px;
             background: rgba(20, 20, 20, 0.65);
-            color: #f0f0f0;
-            padding: 0 20px;
-            position: relative;
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
         }
 
         .left {
             font-size: 2rem;
-            color: rgb(223, 225, 218);
+            color: #d7ccaa;
         }
 
         .menu-icon {
@@ -57,7 +59,7 @@
 
         nav ul li a {
             text-decoration: none;
-            color: white;
+            color: #F2F2F2;
             font-weight: 500;
         }
 
@@ -117,6 +119,7 @@
         }
 
         .rightSection img {
+            margin-top: 60px;
             width: 300px;
             height: 350px;
             object-fit: cover;
@@ -158,6 +161,7 @@
             }
         }
 
+        
         .buttons {
             /* margin-top: 20px; */
             display: flex;
@@ -180,6 +184,10 @@
             background-color: #089a9a;
             transform: translateY(-5px);
         }
+
+
+      
+
 
         footer {
             margin-top: 40px;
@@ -263,7 +271,7 @@
             <div class="right" id="nav-links">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="about2.html">About Me</a></li>
                     <li><a href="certificates.html">Certificates</a></li>
                     <li><a href="project.html">Projects</a></li>
                     <li><a href="resume.html">Resume</a></li>
@@ -288,16 +296,18 @@
                     <div class="social-icons">
                         <a href="https://github.com/gaurii15" target="_blank" aria-label="GitHub"><i
                                 class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/gauri-borse-a8146135b/" target="_blank" aria-label="LinkedIn"><i
+                        <a href="https://www.linkedin.com/in/gauri-borse/" target="_blank" aria-label="LinkedIn"><i
                                 class="fab fa-linkedin"></i></a>
                         <a href="mailto:borsegauri1509@gmail.com" target="_blank" aria-label="Email"><i
                                 class="fas fa-envelope"></i></a>
                         <a href="https://instagram.com/_gauriborse_15" target="_blank" aria-label="Instagram"><i
                                 class="fab fa-instagram"></i></a>
+
+
                     </div>
 
                     <div class="buttons">
-                        <a href="Resume1.pdf" download>Download Resume</a>
+                        <a href="GauriBorse_InternshalaResume.pdf" download>Download Resume</a>
 
                     </div>
                 </footer>
