@@ -27,7 +27,7 @@
             justify-content: space-between;
             align-items: center;
             height: 70px;
-            background: linear-gradient(to right, #1c1b1b, #3d3b3b);
+            background: rgba(5, 5, 5, 0.65);
             color: #f0f0f0;
             padding: 0 20px;
             position: relative;
@@ -78,7 +78,7 @@
             transition: transform 0.4s;
         }
 
-         .sub-title:hover {
+        .sub-title:hover {
             color: #089a9a;
             transform: translateY(-5px);
         }
@@ -133,7 +133,7 @@
         }
 
         .layer h3 {
-            color:#69e5f6;
+            color: #FFD700;
             font-weight: 500;
             margin-bottom: 10px;
         }
@@ -168,7 +168,6 @@
             margin-bottom: 2rem;
             margin-left: 320px;
         }
-
 
         .btn-see-more {
             display: block;
@@ -260,7 +259,7 @@
 
     <div id="portfolio">
         <h1 class="sub-title">Projects</h1>
-        <p class="subtitle">🚀 “Projects that blend creativity, logic, and real-world problem solving.”</p>
+         <p class="subtitle">🚀 “Projects that blend creativity, logic, and real-world problem solving.”</p>
 
         <div class="work-list" id="projectContainer">
             <!-- Visible Projects -->
@@ -278,8 +277,8 @@
                 </div>
             </div>
 
-             <div class="work">
-                <img src="coffee sales.jpg" alt="customer sales">
+            <div class="work">
+                <img src="coffee sales.jpg" alt="AI Chatbot">
                 <div class="layer">
                     <h3> Customer Behavior Sales Analysis (Python, SQL, PowerBi)</h3>
                     <p>Built a complete data analytics workflow integrating Python, SQL, and
@@ -295,7 +294,7 @@
             </div>
 
             <div class="work">
-                <img src="fnp.png" alt="FnP sales
+                <img src="fnp.png" alt="AI Chatbot">
                 <div class="layer">
                     <h3>FNP (Ferns N Petals) Sales Analysis (Excel) </h3>
                     <p> Conducted comprehensive sales analysis for an e-commerce flower and gifting
@@ -309,12 +308,12 @@
                 </div>
             </div>
 
-
             <div class="work">
-                <img src="data.webp" alt="Coffee shop sales">
+                <img src="data.webp" alt="AI Chatbot">
                 <div class="layer">
                     <h3>Coffee Shop Sales Analysis</h3>
-                    <p>This interactive Excel dashboard provides a detailed analysis of coffee shop sales, footfall, and product performance using pivot tables and charts. </p>
+                    <p>This interactive Excel dashboard provides a detailed analysis of coffee shop sales, footfall, and
+                        product performance using pivot tables and charts. </p>
                     <div class="btns">
                         <a href="https://live-site.com" target="_blank">View Live (Not Available)</a>
                         <a href="https://github.com/Gaurii15/Coffee-Shop-Sales" target="_blank">GitHub</a>
@@ -322,9 +321,8 @@
                 </div>
             </div>
 
-            
-            <!-- Hidden Projects -->
 
+            <!-- Hidden Projects -->
             <div class="work hidden">
                 <img src="chatbot2.png" alt="AI Chatbot">
                 <div class="layer">
@@ -337,11 +335,12 @@
                 </div>
             </div>
 
-             <div class="work hidden">
+            <div class="work hidden">
                 <img src="data 2.jpg" alt="Snake Game">
                 <div class="layer">
                     <h3>daikibo-telemetry-data Analysis</h3>
-                    <p>As part of job simulation, I analyzed factory performance using Tableau and Excel to create dashboards showing Downtime per Factory and Downtime per Device Type. </p>
+                    <p>As part of job simulation, I analyzed factory performance using Tableau and Excel to create
+                        dashboards showing Downtime per Factory and Downtime per Device Type. </p>
                     <div class="btns">
                         <a href="https://live-site.com" target="_blank">View Live (Not Available)</a>
                         <a href="https://github.com/Gaurii15/daikibo-telemetry-data-Analysis" target="_blank">GitHub</a>
@@ -360,7 +359,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="work hidden">
                 <img src="currency converter.jpg" alt="Currency Converter">
                 <div class="layer">
@@ -386,7 +385,7 @@
             document.querySelector('.btn-see-more').style.display = 'none';
         }
 
-         // Toggle nav menu
+        // Toggle nav menu
         const menuIcon = document.getElementById("menu-icon");
         const navLinks = document.getElementById("nav-links");
         let menuOpen = false;
